@@ -1,0 +1,7 @@
+{
+  "exit": false,
+  "recursive": true,
+  "require": ["ts-node/register", "test/globals.ts"],
+  "spec": "src/**/*.spec.ts",
+  "watch-files": ["src/**/*.ts"]
+}
