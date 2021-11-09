@@ -2,7 +2,7 @@ import { asClass, asValue, createContainer, asFunction, aliasTo } from 'awilix';
 import bodyParser from 'body-parser';
 import express, { Router } from 'express';
 import { Joi, validate } from 'express-validation';
-import mongo from 'mongodb';
+import * as mongo from 'mongodb';
 import { Provider } from 'nconf';
 import pino from 'pino';
 

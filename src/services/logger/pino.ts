@@ -1,24 +1,21 @@
-import { Logger as PinoInternalLogger } from 'pino';
+import { P } from 'pino';
+
 import { IConfigService, ILoggerService } from '..';
+import { Pino } from '../../types-3rd';
 
 interface IPinoLoggerOptions {
   configService: IConfigService;
-  pino: any;
+  pino: Pino;
 }
 
 export class PinoLoggerService implements ILoggerService {
-  private configService: IConfigService;
-  private pino: any;
+  public pinoLogger!: P.Logger;
 
-  public pinoLogger!: PinoInternalLogger;
-
-  constructor({ configService, pino }: IPinoLoggerOptions) {
-    this.configService = configService;
-    this.pino = pino;
-  }
+  constructor(private deps: IPinoLoggerOptions) {}
 
   init(): void {
-    this.pinoLogger = this.pino(this.configService.get('logger'));
+    const { configService, pino } = this.deps;
+    this.pinoLogger = pino(configService.get('logger'));
   }
 
   info(msg: any, ...args: any[]): void {

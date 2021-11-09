@@ -37,14 +37,12 @@ export default function({
     app.use('/v1', v1MainRouter);
 
     return new Promise((resolve, reject) => {
-      app.listen(port, (err: any) => {
-        if (err) {
-          loggerService.error(err);
-          reject(err);
-        }
-
+      app.listen(port, () => {
         loggerService.info(`API listening on port ${port}`);
-        resolve();
+        resolve(undefined);
+      }).on('error', (err) => {
+        loggerService.error(err);
+        reject(err);
       });
     });
   }

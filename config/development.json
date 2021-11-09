@@ -5,8 +5,11 @@
   },
   "logger": {
     "level": "debug",
-    "prettyPrint": {
-      "colorize": true
+    "transport": {
+      "target": "pino-pretty",
+      "options": {
+        "colorize": true
+      }
     }
   }
 }

@@ -25,7 +25,7 @@ export function v1TaskRouter({
         limit: joi.number().integer().positive(),
         offset: joi.number().integer().min(0),
       })
-    }, { mutate: true }), taskController.list);
+    }, { keyByField: true, context: true }), taskController.list);
 
   return router;
 }
