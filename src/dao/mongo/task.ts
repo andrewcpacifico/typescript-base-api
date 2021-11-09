@@ -12,8 +12,9 @@ interface IOptions {
 
 const COLLECTION: string = 'tasks';
 
-export class TaskMongoDao implements IDao<Task> {
+export default class TaskMongoDao implements IDao<Task> {
   private configService: IConfigService;
+
   private mongoService: MongoService;
 
   constructor({ mongoService, configService }: IOptions) {

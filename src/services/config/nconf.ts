@@ -1,15 +1,16 @@
 import { join } from 'path';
 import { Provider } from 'nconf';
 
-import { IConfigService } from '.';
+import { IConfigService } from './config';
 
 interface IConfigOptions {
   nconfProvider: Provider
   process: NodeJS.Process
 }
 
-export class NconfConfigService implements IConfigService {
+export default class NconfConfigService implements IConfigService {
   private nconfProvider: Provider;
+
   private process: NodeJS.Process;
 
   constructor({ nconfProvider, process }: IConfigOptions) {

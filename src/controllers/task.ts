@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { ITaskService } from "../services/task";
+import { ITaskService } from '../services/task';
 import { Task } from '../models';
 
 export interface ITaskController {
@@ -30,6 +30,6 @@ export function taskControllerModule({ taskService }: Dependencies): ITaskContro
         offset,
       });
       res.json(tasks);
-    }
+    },
   };
 }

@@ -1,6 +1,6 @@
 import { Task } from '../../models';
 import { IDao } from '../../dao';
-import { GetAllOptions,  ITaskService } from '.';
+import { GetAllOptions, ITaskService } from './task';
 
 const DEFAULT_OFFSET = 0;
 const DEFALT_LIMIT = 10;
@@ -9,7 +9,7 @@ interface IOptions {
   taskDao: IDao<Task>,
 }
 
-export class DefaultTaskService implements ITaskService {
+export default class DefaultTaskService implements ITaskService {
   private taskDao: IDao<Task>;
 
   constructor({ taskDao }: IOptions) {
@@ -19,7 +19,7 @@ export class DefaultTaskService implements ITaskService {
   getAll({
     filter,
     offset = DEFAULT_OFFSET,
-    limit = DEFALT_LIMIT
+    limit = DEFALT_LIMIT,
   }: GetAllOptions = {}): Promise<Task[]> {
     return this.taskDao.find(filter, { offset, limit });
   }

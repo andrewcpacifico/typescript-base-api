@@ -1,2 +1,2 @@
-export { v1MainRouter } from './main';
-export { v1TaskRouter } from './task';
+export { default as v1MainRouter } from './main';
+export { default as v1TaskRouter } from './task';

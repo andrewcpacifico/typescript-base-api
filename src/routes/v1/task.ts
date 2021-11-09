@@ -10,7 +10,7 @@ type Dependencies = {
   validate: ValidateMiddleware;
 };
 
-export function v1TaskRouter({
+export default function v1TaskRouter({
   express,
   joi,
   taskController,
@@ -24,7 +24,7 @@ export function v1TaskRouter({
         dueDate: joi.date(),
         limit: joi.number().integer().positive(),
         offset: joi.number().integer().min(0),
-      })
+      }),
     }, { keyByField: true, context: true }), taskController.list);
 
   return router;

@@ -1,6 +1,2 @@
-export { NconfConfigService } from './nconf';
-
-export interface IConfigService {
-  get(property: string): any;
-  load(): void;
-}
+export * from './config';
+export { default as NconfConfigService } from './nconf';

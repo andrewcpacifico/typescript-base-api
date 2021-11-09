@@ -1,4 +1,6 @@
-import { asClass, asValue, createContainer, asFunction, aliasTo } from 'awilix';
+import {
+  asClass, asValue, createContainer, asFunction, aliasTo,
+} from 'awilix';
 import bodyParser from 'body-parser';
 import express, { Router } from 'express';
 import { Joi, validate } from 'express-validation';
@@ -16,7 +18,7 @@ import {
 } from './types-3rd';
 
 import { IDao } from './dao';
-import { TaskMongoDao } from './dao/mongo';
+import TaskMongoDao from './dao/mongo/task';
 
 import { Task } from './models';
 

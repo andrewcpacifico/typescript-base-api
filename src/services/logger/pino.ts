@@ -8,10 +8,10 @@ interface IPinoLoggerOptions {
   pino: Pino;
 }
 
-export class PinoLoggerService implements ILoggerService {
+export default class PinoLoggerService implements ILoggerService {
   public pinoLogger!: P.Logger;
 
-  constructor(private deps: IPinoLoggerOptions) {}
+  constructor(private deps: IPinoLoggerOptions) { }
 
   init(): void {
     const { configService, pino } = this.deps;

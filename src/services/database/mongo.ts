@@ -9,7 +9,7 @@ interface IMongoServiceOptions {
   mongo: MongoModule;
 }
 
-export class MongoService implements IDatabaseService {
+export default class MongoService implements IDatabaseService {
   private mongoClient!: MongoClient;
 
   constructor(private deps: IMongoServiceOptions) {}

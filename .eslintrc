@@ -27,7 +27,6 @@
     }
   },
   "rules": {
-    "no-unused-vars": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -38,6 +37,11 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "no-unused-vars": "off",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-useless-constructor": ["error"],
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": ["error"]
   }
 }

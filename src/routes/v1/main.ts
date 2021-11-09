@@ -7,10 +7,10 @@ interface IOptions {
   v1TaskRouter: Router;
 }
 
-export function v1MainRouter({ express, v1TaskRouter }: IOptions): Router {
+export default function v1MainRouter({ express, v1TaskRouter }: IOptions): Router {
   const router = express.Router();
 
-  router.get('/health', ({}, res) => {
+  router.get('/health', (_req, res) => {
     res.sendStatus(200);
   });
 

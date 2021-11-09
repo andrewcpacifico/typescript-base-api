@@ -16,7 +16,7 @@ export interface IServer {
   start(): void;
 }
 
-export default function({
+export default function serverWrapper({
   express,
   configService,
   loggerService,
