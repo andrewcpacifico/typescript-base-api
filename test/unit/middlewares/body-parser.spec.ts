@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { bodyParserMiddleware } from '.';
+import { bodyParserMiddleware } from '../../../src/middlewares';
 
 describe('bodyParserMiddleware', function () {
   let container: any;

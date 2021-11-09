@@ -15,7 +15,7 @@ stop:
 
 .PHONY: lint
 lint:
-	docker-compose run --rm --no-deps app yarn lint
+	docker-compose run --rm --no-deps app yarn lint && yarn lint-test
 
 .PHONY: remove
 remove:

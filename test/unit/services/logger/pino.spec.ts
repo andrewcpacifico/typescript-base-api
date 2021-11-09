@@ -3,7 +3,7 @@
 import sinon from 'sinon';
 import { expect } from 'chai';
 
-import { PinoLoggerService } from '.';
+import PinoLoggerService from '../../../../src/services/logger/pino';
 
 describe('PinoLoggerService', function () {
   let container: any;
@@ -48,11 +48,11 @@ describe('PinoLoggerService', function () {
     it('should call pino info', function () {
       const params = ['1', '2'];
       const loggerService = new PinoLoggerService(container);
-      loggerService['pinoLogger'] = pinoInstance;
+      loggerService.pinoLogger = pinoInstance;
 
       loggerService.info('a', ...params);
 
-      expect(loggerService['pinoLogger'].info).to.have.been.calledOnceWith('a', ...params);
+      expect(loggerService.pinoLogger.info).to.have.been.calledOnceWith('a', ...params);
     });
   });
 
@@ -60,11 +60,11 @@ describe('PinoLoggerService', function () {
     it('should call pino debug', function () {
       const params = ['1', '2'];
       const loggerService = new PinoLoggerService(container);
-      loggerService['pinoLogger'] = pinoInstance;
+      loggerService.pinoLogger = pinoInstance;
 
       loggerService.debug('a', ...params);
 
-      expect(loggerService['pinoLogger'].debug).to.have.been.calledOnceWith('a', ...params);
+      expect(loggerService.pinoLogger.debug).to.have.been.calledOnceWith('a', ...params);
     });
   });
 
@@ -72,11 +72,11 @@ describe('PinoLoggerService', function () {
     it('should call pino error', function () {
       const params = ['1', '2'];
       const loggerService = new PinoLoggerService(container);
-      loggerService['pinoLogger'] = pinoInstance;
+      loggerService.pinoLogger = pinoInstance;
 
       loggerService.error('a', ...params);
 
-      expect(loggerService['pinoLogger'].error).to.have.been.calledOnceWith('a', ...params);
+      expect(loggerService.pinoLogger.error).to.have.been.calledOnceWith('a', ...params);
     });
   });
 });

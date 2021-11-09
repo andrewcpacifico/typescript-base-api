@@ -1,0 +1,8 @@
+{
+  "extends": "../.eslintrc",
+  "rules": {
+    "func-names": "off",
+    "no-unused-expressions": "off",
+    "prefer-arrow-callback": "off"
+  }
+}

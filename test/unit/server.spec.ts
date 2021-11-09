@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import serverModule from './server';
+import serverModule from '../../src/server';
 
 describe('server', function () {
   let container: any;
@@ -13,7 +13,7 @@ describe('server', function () {
   beforeEach(function () {
     config = { port: 123 };
     expressApp = {
-      listen: sinon.stub().callsFake(({}, cb) => cb()),
+      listen: sinon.stub().callsFake((_port: string, cb) => cb()),
       use: sinon.stub(),
     };
     container = {
@@ -48,14 +48,14 @@ describe('server', function () {
 
     it('should reject if express.listen returns error', async function () {
       const error = new Error();
-      expressApp.listen = ({}, cb: any) => {
+      expressApp.listen = (_port: string, cb: any) => {
         cb(error);
       };
 
       const server = serverModule(container);
       try {
         await server.start();
-      } catch(err) {
+      } catch (err) {
         expect(err).to.be.equal(error);
       }
     });

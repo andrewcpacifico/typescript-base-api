@@ -2,7 +2,7 @@
 
 import sinon from 'sinon';
 import { expect } from 'chai';
-import { DefaultTaskService } from './default';
+import DefaultTaskService from '../../../../src/services/task/default';
 
 describe('DefaultTaskService', function () {
   let container: any;

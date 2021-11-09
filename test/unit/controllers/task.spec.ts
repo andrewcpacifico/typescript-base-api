@@ -1,9 +1,7 @@
-/* tslint:disable only-arrow-functions no-unused-expression */
-
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { taskControllerModule } from './task';
+import { taskControllerModule } from '../../../src/controllers/task';
 
 describe.only('TaskController', function () {
   let container: any;

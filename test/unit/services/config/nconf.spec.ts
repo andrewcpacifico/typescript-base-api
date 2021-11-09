@@ -4,7 +4,7 @@ import { expect } from 'chai';
 import path from 'path';
 import sinon from 'sinon';
 
-import { NconfConfigService } from './nconf';
+import NconfConfigService from '../../../../src/services/config/nconf';
 
 describe('NconfConfig service', function () {
   let container: any;
@@ -32,7 +32,7 @@ describe('NconfConfig service', function () {
     });
 
     it('should not fill NODE_ENV', function () {
-      container.process.env.NODE_ENV = 'production'
+      container.process.env.NODE_ENV = 'production';
 
       const configService = new NconfConfigService(container);
       configService.load();

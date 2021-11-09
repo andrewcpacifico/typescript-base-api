@@ -3,7 +3,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 
-import { MongoService } from '.';
+import { MongoService } from '../../../../src/services/database';
 
 describe('MongoDatabaseService', function () {
   let container: any;
@@ -14,7 +14,9 @@ describe('MongoDatabaseService', function () {
     client = {};
     config = { host: 'host', database: 'database' };
     container = {
-      mongo: { connect: sinon.stub().resolves(client) },
+      mongo: {
+        MongoClient: { connect: sinon.stub().resolves(client) },
+      },
       configService: { get: sinon.stub().returns(config) },
       loggerService: { info: sinon.stub(), error: sinon.stub() },
     };
@@ -33,33 +35,28 @@ describe('MongoDatabaseService', function () {
       expect(configService.get).to.have.been.calledOnceWith('mongo');
     });
 
-    it('should use mongo connect with corret params', async function () {
+    it('should use mongo connect with correct params', async function () {
       const { mongo } = container;
       const { host, database } = config;
 
       const url = `mongodb://${host}/${database}`;
-      const opts = [url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      }];
-
       const mongoService: MongoService = new MongoService(container);
       await mongoService.connect();
 
-      expect(mongo.connect).to.have.been.calledOnceWith(...opts);
+      expect(mongo.MongoClient.connect).to.have.been.calledOnceWith(url);
     });
 
     it('should log and throw error', async function () {
       const { mongo, loggerService } = container;
       const err = { msg: 'Error' };
 
-      mongo.connect = sinon.stub().rejects(err);
+      mongo.MongoClient.connect = sinon.stub().rejects(err);
 
       const mongoService: MongoService = new MongoService(container);
 
       try {
         await mongoService.connect();
-      } catch(error) {
+      } catch (error) {
         expect(error).to.be.equal(err);
         expect(loggerService.error).to.have.been.calledOnce;
       }
