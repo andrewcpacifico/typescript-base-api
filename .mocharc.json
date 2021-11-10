@@ -2,6 +2,5 @@
   "exit": false,
   "recursive": true,
   "require": ["ts-node/register", "test/globals.ts"],
-  "spec": "test/**/*.spec.ts",
   "watch-files": ["src/**/*.ts"]
 }

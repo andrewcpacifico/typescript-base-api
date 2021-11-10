@@ -24,7 +24,7 @@ export function taskControllerModule({ taskService }: Dependencies): ITaskContro
 
       const tasks: Task[] = await taskService.getAll({
         filter: {
-          dueDate,
+          ...(dueDate !== undefined) && { dueDate },
         },
         limit,
         offset,

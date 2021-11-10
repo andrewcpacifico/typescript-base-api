@@ -1,0 +1,9 @@
+{
+  "mongo": {
+    "host": "mongo",
+    "database": "test"
+  },
+  "logger": {
+    "level": "error"
+  }
+}

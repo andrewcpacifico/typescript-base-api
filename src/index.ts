@@ -1,24 +1,8 @@
-import { DependencyContainer, registerDependencies } from './dependency-container';
-
-const dependencyContainer: DependencyContainer = registerDependencies();
-
-async function initialize() {
-  const {
-    configService,
-    databaseService,
-    loggerService,
-  } = dependencyContainer;
-
-  configService.load();
-  loggerService.init();
-  await databaseService.connect();
-}
+import server from './server';
 
 async function main() {
-  const { server } = dependencyContainer;
-
-  await initialize();
-  server.start();
+  await server.initialize();
+  return server.start();
 }
 
-main();
+export default main();

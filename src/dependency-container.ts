@@ -4,6 +4,7 @@ import {
 import bodyParser from 'body-parser';
 import express, { Router } from 'express';
 import { Joi, validate } from 'express-validation';
+import moment from 'moment';
 import * as mongo from 'mongodb';
 import { Provider } from 'nconf';
 import pino from 'pino';
@@ -12,6 +13,7 @@ import {
   BodyParser,
   Express,
   JoiModule,
+  MomentModule,
   MongoModule,
   ValidateMiddleware,
   Pino,
@@ -37,7 +39,6 @@ import { taskControllerModule, ITaskController } from './controllers';
 
 import { v1MainRouter, v1TaskRouter } from './routes/v1';
 
-import server, { IServer } from './server';
 import { IMiddleware, bodyParserMiddleware } from './middlewares';
 
 export interface DependencyContainer {
@@ -48,6 +49,7 @@ export interface DependencyContainer {
   bodyParser: BodyParser;
   express: Express;
   joi: JoiModule;
+  moment: MomentModule;
   mongo: MongoModule;
   nconfProvider: Provider;
   pino: Pino;
@@ -72,9 +74,6 @@ export interface DependencyContainer {
 
   // middlewares
   middlewares: IMiddleware[];
-
-  // general
-  server: IServer;
 }
 
 export function registerDependencies(): DependencyContainer {
@@ -84,6 +83,7 @@ export function registerDependencies(): DependencyContainer {
     bodyParser: asValue(bodyParser),
     express: asValue(express),
     joi: asValue(Joi),
+    moment: asValue(moment),
     mongo: asValue(mongo),
     nconfProvider: asValue(new Provider()),
     pino: asValue(pino),
@@ -104,9 +104,6 @@ export function registerDependencies(): DependencyContainer {
     databaseService: aliasTo('mongoService'),
     loggerService: asClass(PinoLoggerService).singleton(),
     taskService: asClass(DefaultTaskService).singleton(),
-
-    // general
-    server: asFunction(server).singleton(),
   });
 
   // controllers

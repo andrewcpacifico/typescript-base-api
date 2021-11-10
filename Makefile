@@ -25,9 +25,13 @@ remove:
 logs:
 	docker-compose logs -f $(service)
 
-.PHONY: test
-test:
-	docker-compose run --rm --no-deps app yarn test
+.PHONY: test-integration
+test-integration:
+	docker-compose run --rm $(service) yarn test:integration
+
+.PHONY: test-unit
+test-unit:
+	docker-compose run --rm --no-deps app yarn test:unit
 
 # dependency management
 .PHONY: add-dependency

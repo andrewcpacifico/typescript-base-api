@@ -1,35 +1,49 @@
-import { Express, Router } from 'express';
+import { Express } from 'express';
 
-import { IConfigService, ILoggerService } from './services';
-import { IMiddleware } from './middlewares';
-import { Express as ExpressCreator } from './types-3rd';
+import { DependencyContainer, registerDependencies } from './dependency-container';
 
-interface Options {
-  express: ExpressCreator;
-  configService: IConfigService;
-  loggerService: ILoggerService;
-  middlewares: IMiddleware[];
-  v1MainRouter: Router;
+const dependencyContainer: DependencyContainer = registerDependencies();
+
+export type TServerResult = {
+  expressApp: Express;
+  dependencyContainer: DependencyContainer;
 }
 
 export interface IServer {
-  start(): void;
+  initialize(): Promise<void>;
+  start(): Promise<TServerResult>;
 }
 
-export default function serverWrapper({
-  express,
-  configService,
-  loggerService,
-  middlewares,
-  v1MainRouter,
-}: Options): IServer {
-  function applyMiddlewares(app: Express) {
-    middlewares.forEach((middleware) => {
-      app.use(middleware);
-    });
-  }
+function applyMiddlewares(app: Express) {
+  const { middlewares } = dependencyContainer;
 
-  function start() {
+  middlewares.forEach((middleware) => {
+    app.use(middleware);
+  });
+}
+
+const server: IServer = {
+  async initialize() {
+    const {
+      configService,
+      databaseService,
+      loggerService,
+    } = dependencyContainer;
+
+    configService.load();
+    loggerService.init();
+    await databaseService.connect();
+  },
+
+  start() {
+    const {
+      configService,
+      express,
+      loggerService,
+      v1MainRouter,
+    } = dependencyContainer;
+
+    console.log('starting...');
     const { port } = configService.get('server');
 
     const app = express();
@@ -39,13 +53,13 @@ export default function serverWrapper({
     return new Promise((resolve, reject) => {
       app.listen(port, () => {
         loggerService.info(`API listening on port ${port}`);
-        resolve(undefined);
+        resolve({ expressApp: app, dependencyContainer });
       }).on('error', (err) => {
         loggerService.error(err);
         reject(err);
       });
     });
-  }
+  },
+};
 
-  return { start };
-}
+export default server;
