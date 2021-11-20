@@ -27,6 +27,24 @@
     typescript "^4.5.2"
     yargs "^17.2.1"
 
+"@allspark-js/core@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.11.0.tgz#d1258ef8b8ddfaf41eed55acae5ef650eae5cfc9"
+  integrity sha512-V8ELY0wUgxoz4DIKQ4YEqBQHgbF3my0KPYDIP81WRzvyBa473ca/Am/p3nHLBn4JmebdNLYJlu8UnbtEVvuHCQ==
+  dependencies:
+    awilix "^6.0.0"
+    nconf "^0.11.3"
+    pino "^7.2.0"
+    pino-pretty "^7.2.0"
+
+"@allspark-js/rest@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.11.0.tgz#a492551a2aa5f49397f5d8b1a62e58679c997264"
+  integrity sha512-prwAt/LMP3SLE/Hgp00Ac5CHgucf3+HfZse7OPqjl1GZTc7SkzuXsG/PUNlGAf8ZeXY+Mbf2yuraiUz1UK+r0g==
+  dependencies:
+    "@allspark-js/core" "^0.11.0"
+    express "^4.17.1"
+
 "@babel/code-frame@7.12.11":
   version "7.12.11"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.12.11.tgz#f4ad435aa263db935b8f10f2c552d23fb716a63f"
@@ -2635,6 +2653,23 @@ pino@^7.1.0:
     sonic-boom "^2.2.1"
     thread-stream "^0.12.0"
 
+pino@^7.2.0:
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-7.3.0.tgz#42950857bdc4e963c8b2c60cdae6b0f2d5131acf"
+  integrity sha512-RHnBlpOc6qxGvwH5PO5THuQLOaq/CT7xWsdmMkd4tG3u6Z0Mp+DENz9eoLh85dBGzwXYoaSTjOYQ0S4aTn5THg==
+  dependencies:
+    fast-redact "^3.0.0"
+    fastify-warning "^0.2.0"
+    get-caller-file "^2.0.5"
+    on-exit-leak-free "^0.2.0"
+    pino-abstract-transport v0.5.0
+    pino-std-serializers "^4.0.0"
+    quick-format-unescaped "^4.0.3"
+    real-require "^0.1.0"
+    safe-stable-stringify "^2.1.0"
+    sonic-boom "^2.2.1"
+    thread-stream "^0.13.0"
+
 pkg-dir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/pkg-dir/-/pkg-dir-2.0.0.tgz#f6d5d1109e19d63edf428e0bd57e12777615334b"
@@ -2766,6 +2801,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+real-require@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/real-require/-/real-require-0.1.0.tgz#736ac214caa20632847b7ca8c1056a0767df9381"
+  integrity sha512-r/H9MzAWtrv8aSVjPCMFpDMl5q66GqtmmRkRjpHTsp4zBAa+snZyiQNlMONiUmEJcsnaw0wCauJ2GWODr/aFkg==
 
 regexpp@^3.1.0, regexpp@^3.2.0:
   version "3.2.0"
@@ -3160,6 +3200,13 @@ thread-stream@^0.12.0:
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/thread-stream/-/thread-stream-0.12.1.tgz#83d851903a03c51f10612c2a9b2c087914780ff4"
   integrity sha512-eFgcefesjNohVbqtNG/rh54HekZeId2xbuVXZpP5PBXTe5S+WIBfAFTbh2KRa4o/4pocgWTOTfnS0MaGOEiFTA==
+
+thread-stream@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/thread-stream/-/thread-stream-0.13.0.tgz#c68054bdea250c5d8d400caa3233a150d5461cca"
+  integrity sha512-kTMZeX4Dzlb1zZ00/01aerGaTw2i8NE4sWF0TvF1uXewRhCiUjCvatQkvxIvFqauWG2ADFS2Wpd3qBeYL9i3dg==
+  dependencies:
+    real-require "^0.1.0"
 
 to-readable-stream@^1.0.0:
   version "1.0.0"
