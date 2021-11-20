@@ -8,11 +8,10 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "lint": "eslint src --ext '.js,.ts,.tsx' -c .eslintrc",
-    "lint-test": "eslint test --ext '.js,.ts,.tsx' -c test/.eslintrc",
-    "dev": "nodemon --watch \"src/\" --exec \"ts-node src/index.ts\" -e ts",
-    "start": "node .",
-    "test:unit": "NODE_ENV=test mocha ./test/unit/**/*.spec.ts",
+    "compile": "allspark-builder compile",
+    "dev": "allspark-builder dev",
+    "lint": "allspark-builder lint",
+    "test:unit": "allspark-builder test-unit",
     "test:integration": "NODE_ENV=test mocha --timeout 10000 ./test/integration/**/*.ts --exit",
     "test": "yarn test:unit && yarn test:integration"
   },
@@ -31,6 +30,7 @@
     "prom-client": "^14.0.1"
   },
   "devDependencies": {
+    "@allspark-js/builder": "^0.11.0",
     "@types/chai": "^4.2.22",
     "@types/chai-as-promised": "^7.1.4",
     "@types/mocha": "^9.0.0",
@@ -38,14 +38,8 @@
     "@types/node": "*",
     "@types/sinon-chai": "^3.2.5",
     "@types/supertest": "^2.0.11",
-    "@typescript-eslint/eslint-plugin": "^5.3.1",
-    "@typescript-eslint/parser": "^5.3.1",
     "chai": "^4.3.4",
     "chai-as-promised": "^7.1.1",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-import": "^2.25.2",
     "mocha": "^9.1.3",
     "nodemon": "^2.0.14",
     "sinon": "^12.0.1",

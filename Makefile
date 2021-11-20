@@ -5,6 +5,10 @@ build:
 	docker-compose build
 	docker-compose run --rm --no-deps app yarn
 
+.PHONY: compile
+compile:
+	docker-compose run --rm --no-deps $(service) yarn compile
+
 .PHONY: start
 start:
 	docker-compose up -d
@@ -15,7 +19,7 @@ stop:
 
 .PHONY: lint
 lint:
-	docker-compose run --rm --no-deps app yarn lint && yarn lint-test
+	docker-compose run --rm --no-deps app yarn lint
 
 .PHONY: remove
 remove:

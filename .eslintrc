@@ -1,47 +1,8 @@
+// the purpose of this file is to add eslint live on your editor, but it is
+// not recommended to override the base rules. The lint task will ignore any
+// rules set directly here.
 {
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "tsconfig.json",
-    "tsconfigRootDir": "."
-  },
-  "plugins": [
-    "import",
-    "@typescript-eslint"
-  ],
-  "extends": [
-    "airbnb-base"
-  ],
-  "env": {
-    "node": true,
-    "mocha": true
-  },
-  "globals": {
-    "NodeJS": true
-  },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
-    },
-    "import/resolver": {
-      "typescript": {}
-    }
-  },
-  "rules": {
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "mjs": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-    ],
-    "no-unused-vars": "off",
-    "no-useless-constructor": "off",
-    "@typescript-eslint/no-useless-constructor": ["error"],
-    "no-empty-function": "off",
-    "@typescript-eslint/no-empty-function": ["error"]
-  }
+  // this is an ugly way to import the base rules without needing to create an
+  // specific package for the eslint config
+  "extends": "./node_modules/@allspark-js/builder/config/.eslintrc"
 }
