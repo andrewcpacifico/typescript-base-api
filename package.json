@@ -19,21 +19,14 @@
     "@allspark-js/core": "^0.11.0",
     "@allspark-js/rest": "^0.13.0",
     "awilix": "^6.0.0",
-    "body-parser": "^1.19.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "express-validation": "^3.0.8",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "mongodb": "^4.1.4",
-    "nconf": "^0.11.3",
-    "pino": "^7.1.0",
-    "pino-pretty": "^7.2.0",
     "prom-client": "^14.0.1"
   },
   "devDependencies": {
     "@allspark-js/builder": "^0.11.0",
-    "@types/nconf": "^0.10.1",
     "supertest": "^6.1.6"
   }
 }

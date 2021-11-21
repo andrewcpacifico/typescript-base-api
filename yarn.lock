@@ -306,11 +306,6 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-9.0.0.tgz#3205bcd15ada9bc681ac20bef64e9e6df88fd297"
   integrity sha512-scN0hAWyLVAvLR9AyW7HoFF5sJZglyBsbPuHO4fv7JRvfmPBMfp1ozWqOf/e4wwPNxezBZXRfWzMb6iFLgEVRA==
 
-"@types/nconf@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@types/nconf/-/nconf-0.10.1.tgz#f726cb43f786ec46d8362106264e49085035ce06"
-  integrity sha512-5mv1YaLBjoKEHe9uztvKNVCQMBD+IGFfUo0lzHtiyHnEMMU0eMB3ithFDzMHBvIbYvjUvD9tD7rNHLyRz2bO/g==
-
 "@types/node@*":
   version "16.11.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.7.tgz#36820945061326978c42a01e56b61cd223dfdc42"
@@ -639,7 +634,7 @@ bintrees@1.0.1:
   resolved "https://registry.yarnpkg.com/bintrees/-/bintrees-1.0.1.tgz#0e655c9b9c2435eaab68bf4027226d2b55a34524"
   integrity sha1-DmVcm5wkNeqraL9AJyJtK1WjRSQ=
 
-body-parser@1.19.0, body-parser@^1.19.0:
+body-parser@1.19.0:
   version "1.19.0"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha512-dhEPs72UPbDnAQJ9ZKMNTP6ptJaionhP5cBb541nXPlW60Jepo9RV/a4fX4XWW9CuFNK22krhrj1+rgzifNCsw==
@@ -2648,22 +2643,6 @@ pino-std-serializers@^4.0.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-4.0.0.tgz#1791ccd2539c091ae49ce9993205e2cd5dbba1e2"
   integrity sha512-cK0pekc1Kjy5w9V2/n+8MkZwusa6EyyxfeQCB799CQRhRt/CqYKiWs5adeu8Shve2ZNffvfC/7J64A2PJo1W/Q==
 
-pino@^7.1.0:
-  version "7.1.0"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-7.1.0.tgz#1012882eb2cd75ebd6b33e407d93e9295c996f34"
-  integrity sha512-EdNpwNxlNK2gt48V4P8uvGmfTH7yW+in4MAMGgU69ovtNQqBj+kA3xGjgPQHMXo5vr4rq+vWuBgNiz/LmfK++A==
-  dependencies:
-    fast-redact "^3.0.0"
-    fastify-warning "^0.2.0"
-    get-caller-file "^2.0.5"
-    on-exit-leak-free "^0.2.0"
-    pino-abstract-transport v0.5.0
-    pino-std-serializers "^4.0.0"
-    quick-format-unescaped "^4.0.3"
-    safe-stable-stringify "^2.1.0"
-    sonic-boom "^2.2.1"
-    thread-stream "^0.12.0"
-
 pino@^7.2.0:
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/pino/-/pino-7.3.0.tgz#42950857bdc4e963c8b2c60cdae6b0f2d5131acf"
@@ -3206,11 +3185,6 @@ text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
-
-thread-stream@^0.12.0:
-  version "0.12.1"
-  resolved "https://registry.yarnpkg.com/thread-stream/-/thread-stream-0.12.1.tgz#83d851903a03c51f10612c2a9b2c087914780ff4"
-  integrity sha512-eFgcefesjNohVbqtNG/rh54HekZeId2xbuVXZpP5PBXTe5S+WIBfAFTbh2KRa4o/4pocgWTOTfnS0MaGOEiFTA==
 
 thread-stream@^0.13.0:
   version "0.13.0"
