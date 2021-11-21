@@ -1,29 +1,22 @@
-import { RouteHandler, IServer, ResponseFormatter } from '@allspark-js/rest';
+import { IServer, IController } from '@allspark-js/rest';
 import { ExpressValidator } from '@allspark-js/rest/third-party';
 
 type Dependencies = {
-  v1TaskFormatter: ResponseFormatter;
-  v1TaskHandler: RouteHandler;
+  v1TaskListController: IController;
   validator: ExpressValidator;
   server: IServer,
 };
 
 export default function v1TaskRouter(deps: Dependencies) {
-  const { validator: { joi }, server } = deps;
+  const { server } = deps;
   const router = server.createRouter();
 
-  // const { v1TaskHandler, v1TaskFormatter } = deps;
+  const { v1TaskListController } = deps;
   router.get({
     path: '/',
-    handler: async () => { /** */ },
-    formatter: (res) => { res.json('ok'); },
-    validatorSchema: {
-      query: joi.object({
-        dueDate: joi.date(),
-        limit: joi.number().integer().positive(),
-        offset: joi.number().integer().min(0),
-      }),
-    },
+    handler: v1TaskListController.handle,
+    formatter: v1TaskListController.format,
+    validatorSchema: v1TaskListController.validator,
   });
 
   return router;
