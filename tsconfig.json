@@ -2,6 +2,10 @@
   "extends": "@allspark-js/builder/config/tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@domain/*": ["src/domain/*"],
+      "@rest/*": ["src/rest/*"]
+    }
   }
 }
