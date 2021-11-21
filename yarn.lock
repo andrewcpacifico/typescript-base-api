@@ -37,13 +37,24 @@
     pino "^7.2.0"
     pino-pretty "^7.2.0"
 
-"@allspark-js/rest@^0.11.0":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.11.0.tgz#a492551a2aa5f49397f5d8b1a62e58679c997264"
-  integrity sha512-prwAt/LMP3SLE/Hgp00Ac5CHgucf3+HfZse7OPqjl1GZTc7SkzuXsG/PUNlGAf8ZeXY+Mbf2yuraiUz1UK+r0g==
+"@allspark-js/core@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.13.0.tgz#9d19810e2378b3b49ae0c49cd9ab4a8db05d7e02"
+  integrity sha512-+yNDheg1zAChVJZxxHhoIEOk49FgtUFSkvKi2RjSGPSB0OI60ZloajKdslxGJjEIJOPqfTwMpHSX8om7mc//jA==
   dependencies:
-    "@allspark-js/core" "^0.11.0"
+    awilix "^6.0.0"
+    nconf "^0.11.3"
+    pino "^7.2.0"
+    pino-pretty "^7.2.0"
+
+"@allspark-js/rest@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.13.0.tgz#56c153879267dbd0478f9e872c0422cef751a9f2"
+  integrity sha512-IYhXeJv5HdYPYE5/tWM8FbQllbgPXen91yEKBe79JAEerSYRD1yVXG+/PejvstQsMd7PDttIsCmRiI9uQtqqdg==
+  dependencies:
+    "@allspark-js/core" "^0.13.0"
     express "^4.17.1"
+    express-validation "^3.0.8"
 
 "@babel/code-frame@7.12.11":
   version "7.12.11"
