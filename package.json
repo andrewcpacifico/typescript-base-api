@@ -18,11 +18,9 @@
   "dependencies": {
     "@allspark-js/core": "^0.14.0",
     "@allspark-js/rest": "^0.14.0",
-    "awilix": "^6.0.0",
     "dotenv": "^10.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "mongodb": "^4.1.4",
     "prom-client": "^14.0.1"
   },
   "devDependencies": {
