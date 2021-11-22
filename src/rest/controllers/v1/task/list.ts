@@ -1,7 +1,10 @@
 import { IController, Request, Response } from '@allspark-js/rest';
 import { ExpressValidator } from '@allspark-js/rest/third-party';
+import { Task } from '@domain/entities/task';
+import { TListTaskService } from '@domain/services/task/list';
 
 type TDependencies = {
+  taskListService: TListTaskService;
   validator: ExpressValidator;
 };
 
@@ -11,20 +14,24 @@ type TQueryParams = {
   offset: number;
 };
 
-type TSuccessResponse = {
-  limit: number;
-};
+type TSuccessResponse = Task[];
 
 export default function listTasksWrapper(deps: TDependencies): IController<TSuccessResponse> {
-  const { validator: { joi } } = deps;
+  const { validator: { joi }, taskListService } = deps;
 
   return {
     async handle(req: Request<any, any, TQueryParams, any>) {
-      return { limit: req.query.limit };
+      const { limit, offset, dueDate } = req.query;
+      return taskListService({ dueDate, limit, offset });
     },
 
     format(res: Response, data: TSuccessResponse) {
-      res.json(data);
+      const formatted = data.map((task) => ({
+        id: task.id,
+        title: task.title,
+        dueDate: task.dueDate,
+      }));
+      res.json({ tasks: formatted });
     },
 
     validator: {
