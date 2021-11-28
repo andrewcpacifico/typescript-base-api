@@ -27,23 +27,36 @@
     typescript "^4.5.2"
     yargs "^17.2.1"
 
-"@allspark-js/core@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.14.0.tgz#f5a4c6295ec8de0aa0fedadb1b61253759a4cf07"
-  integrity sha512-uyX/FkdNgwVID1SjrNbsp0tTtOMg2OCzdHqfRSrG23CZCusC9kPE9oMnjGj1IFMT6yv+Y9DQv5eS6DE2sNGVGQ==
+"@allspark-js/core@^0.15.2-alpha.1":
+  version "0.15.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.15.2-alpha.1.tgz#ab920d1228c937451620c79ce956f2d23ded3291"
+  integrity sha512-C8pMcp1tr4VLYFlDLm9pB+eF1p+TzoZ33InYKcA1LOJadIzv6wHtDoRWYuXdD2L+mJv7VJIFF9gaK5w+OKaGKw==
   dependencies:
     awilix "^6.0.0"
+    moment "^2.29.1"
     mongodb "^4.2.0"
     nconf "^0.11.3"
     pino "^7.2.0"
     pino-pretty "^7.2.0"
 
-"@allspark-js/rest@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.14.0.tgz#9f25745d5e89f6a6c7123b1e2a923c2cb5c3efec"
-  integrity sha512-5ZixSt4MGNxEF1Mvj8PpkN/c5HASADEwSNTxXP8STVZ4fPm0PW8nVGtMqbk9hQN28xeb9Fg9SelVczfmkFxCkQ==
+"@allspark-js/core@^0.16.0-alpha.0":
+  version "0.16.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.16.0-alpha.0.tgz#a1e660d708224d3a746a97f78fc2733d1790fec2"
+  integrity sha512-SG2YqX22cIfbV1QDAxtIVYIRxgC5wpDB3yD4x69+LFQUBrLkGNpmVvL6tSZ3exgXUoEG+xxS6OaGy8NG8ca3oQ==
   dependencies:
-    "@allspark-js/core" "^0.14.0"
+    awilix "^6.0.0"
+    moment "^2.29.1"
+    mongodb "^4.2.0"
+    nconf "^0.11.3"
+    pino "^7.2.0"
+    pino-pretty "^7.2.0"
+
+"@allspark-js/rest@^0.15.2-alpha.1":
+  version "0.15.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.15.2-alpha.1.tgz#e3c2cba95723f2754b0d31cbbb0cb6be2163d112"
+  integrity sha512-ZVFyKUaJgxh+HJ1wwlh+V+57MrWG0MzTNpFPyJ78vzq5ap0P67bKVFMjjlzK2RqNVSiei09I2G8nXNn+bdCJ9A==
+  dependencies:
+    "@allspark-js/core" "^0.15.2-alpha.1"
     express "^4.17.1"
     express-validation "^3.0.8"
 

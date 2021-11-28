@@ -1,12 +1,12 @@
 /* eslint-disable no-underscore-dangle */
-import * as moment from 'moment';
-
 import { IConfigManager, IMongoManager } from '@allspark-js/core';
+import { MomentModule } from '@allspark-js/core/third-party';
 
 import { Task } from '@domain/entities/task';
 
 type TDependencies = {
   configManager: IConfigManager,
+  moment: MomentModule,
   mongoManager: IMongoManager
 };
 
@@ -42,7 +42,7 @@ export default class TaskRepository implements ITaskRepository {
   }
 
   async list({ filter = {}, limit, offset }: TListTaskArgs): Promise<Task[]> {
-    const { configManager, mongoManager } = this.deps;
+    const { configManager, moment, mongoManager } = this.deps;
     const { dueDate } = filter;
 
     const client = mongoManager.getClient();
