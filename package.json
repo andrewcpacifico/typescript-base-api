@@ -11,15 +11,15 @@
     "compile": "allspark-builder compile",
     "dev": "allspark-builder dev",
     "lint": "allspark-builder lint",
-    "test:unit": "allspark-builder test-unit",
-    "test:integration": "NODE_ENV=test mocha --timeout 10000 ./test/integration/**/*.ts --exit",
+    "test:unit": "NODE_ENV=test allspark-builder test-unit",
+    "test:integration": "NODE_ENV=test allspark-builder test-integration",
     "test": "yarn test:unit && yarn test:integration"
   },
   "dependencies": {
-    "@allspark-js/core": "^0.16.0-alpha.0",
-    "@allspark-js/rest": "^0.15.2-alpha.1"
+    "@allspark-js/core": "^0.16.0-alpha.5",
+    "@allspark-js/rest": "file:.yalc/@allspark-js/rest"
   },
   "devDependencies": {
-    "@allspark-js/builder": "^0.16.0-alpha.3"
+    "@allspark-js/builder": "file:.yalc/@allspark-js/builder"
   }
 }

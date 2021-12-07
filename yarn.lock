@@ -32,10 +32,10 @@
     typescript "^4.5.2"
     yargs "^17.2.1"
 
-"@allspark-js/core@^0.15.2-alpha.1":
-  version "0.15.2-alpha.1"
-  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.15.2-alpha.1.tgz#ab920d1228c937451620c79ce956f2d23ded3291"
-  integrity sha512-C8pMcp1tr4VLYFlDLm9pB+eF1p+TzoZ33InYKcA1LOJadIzv6wHtDoRWYuXdD2L+mJv7VJIFF9gaK5w+OKaGKw==
+"@allspark-js/core@^0.16.0-alpha.5", "@allspark-js/core@^0.16.0-alpha.6":
+  version "0.16.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.16.0-alpha.6.tgz#3e92e879dcc32b083e77d71094e92d348efde8ff"
+  integrity sha512-LzCqKc0OUxEFyqEWGekBAA7gWgOQ5KDO8v/ZXXHtPweERic29wFwRzF3xjTGL8kZPiyoWCRZI8v2H+vc7IBPMw==
   dependencies:
     awilix "^6.0.0"
     moment "^2.29.1"
@@ -44,24 +44,12 @@
     pino "^7.2.0"
     pino-pretty "^7.2.0"
 
-"@allspark-js/core@^0.16.0-alpha.0":
-  version "0.16.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@allspark-js/core/-/core-0.16.0-alpha.0.tgz#a1e660d708224d3a746a97f78fc2733d1790fec2"
-  integrity sha512-SG2YqX22cIfbV1QDAxtIVYIRxgC5wpDB3yD4x69+LFQUBrLkGNpmVvL6tSZ3exgXUoEG+xxS6OaGy8NG8ca3oQ==
+"@allspark-js/rest@^0.16.0-alpha.7":
+  version "0.16.0-alpha.7"
+  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.16.0-alpha.7.tgz#88101806782fc8fbc77d873cc3cb5a1cee91c596"
+  integrity sha512-VGlS8f61XmWH+wf6bWKesZePPLPFkhW3AW8/LV/qIEfeyEJkXXCuEFDQ9CG9v24n/O7e4z918uC1tGG/nLEoyg==
   dependencies:
-    awilix "^6.0.0"
-    moment "^2.29.1"
-    mongodb "^4.2.0"
-    nconf "^0.11.3"
-    pino "^7.2.0"
-    pino-pretty "^7.2.0"
-
-"@allspark-js/rest@^0.15.2-alpha.1":
-  version "0.15.2-alpha.1"
-  resolved "https://registry.yarnpkg.com/@allspark-js/rest/-/rest-0.15.2-alpha.1.tgz#e3c2cba95723f2754b0d31cbbb0cb6be2163d112"
-  integrity sha512-ZVFyKUaJgxh+HJ1wwlh+V+57MrWG0MzTNpFPyJ78vzq5ap0P67bKVFMjjlzK2RqNVSiei09I2G8nXNn+bdCJ9A==
-  dependencies:
-    "@allspark-js/core" "^0.15.2-alpha.1"
+    "@allspark-js/core" "^0.16.0-alpha.6"
     express "^4.17.1"
     express-validation "^3.0.8"
 
